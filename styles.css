@@ -1,0 +1,158 @@
+#form1 {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	overflow: auto;
+
+}
+
+#background {
+	position: absolute;
+	display: -webkit-flex;
+    display: flex;
+	align-items: center;
+	justify-content: space-around;
+	order: 312;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	/*background-color: gray;*/
+}
+
+#frame1 {
+	display: -webkit-flex;
+    display: flex;
+	order: 3;
+	width: 400px;
+	height: 510px;
+	justify-content: space-around;
+	border-style: solid;
+	border-color: black;
+	border-width: 100%;
+	font-family: lucida sans typewriter;
+	line-height: 180%;
+	background-color: rgb(245,245,245);
+}
+
+.tododiv {
+	height: 34px;
+	width: 100%;
+	border-bottom: 1px solid;
+	border-color: rgb(221,160,221);
+	margin-left: 1%;
+	margin-top: 16px;
+	z-index: 100;
+	background-color: white;
+}
+
+.iddiv {
+	height: 34px;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-color: lightgray;
+	margin-top: 16px;
+	padding-left: 5px;
+	z-index: 100;
+	background-color: white;
+	top: 1px;
+	border-left: 1px solid;
+}
+
+#todos {
+	width: 60%;
+	height: 100%;
+}
+
+#ids {
+	width: 10%;
+	height: 100%;
+}
+
+#edts {
+	margin-top: 14px;
+	/*background-color: blue;*/
+}
+
+#dlts {
+	margin-top: 14px;
+	/*background-color: purple;*/
+}
+
+#expds {
+	margin-top: 14px;
+}
+
+.edtdiv {
+	display: -webkit-flex;
+    display: flex;
+	height: 34px;
+	margin: 0px 0px 16px 0px;
+	border-left: 1px solid;
+}
+
+.dltdiv {
+	display: -webkit-flex;
+    display: flex;
+	height: 34px;
+	margin: 0px 0px 16px 0px;
+	border-left: 1px solid;
+}
+
+.expdiv {
+	display: -webkit-flex;
+    display: flex;
+	height: 34px;
+	margin: 0px 0px 16px 0px;
+	border-left: 1px solid;
+}
+
+#submitbutton {
+	display: -webkit-flex;
+    display: flex;
+	justify-content: center; 
+	width: 130px;
+	height: 60px;
+	order: 2;
+	font-family: monaco;
+	font-size: 18pt;
+	background-color: yellow;
+	border-radius: 12px;
+	margin-bottom: 10%;
+
+
+}
+
+#cms {
+	font-family: lucida grande;
+	text-align: left;
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-bottom: 10%;
+}
+
+.field {
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-top: 10px;
+	overflow: hidden;
+	width: 100%;
+	color: #909090;
+}
+
+.priority {
+	height: 30px;
+	width: 120px;
+	font-size: 15px;
+	background-color: white;
+}
+
+#reset {
+	position: absolute;
+	top: 12%;
+}
+
+h1 {
+	position: absolute;
+	background-color: gray;
+	color: pink;
+}

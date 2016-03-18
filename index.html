@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+	<head>	
+		<title>To do List 1</title>
+		<style>
+			ul { list-style: none;}
+		</style>
+		<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+		<script src="todo.js"></script>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+
+	<body onload="start()">
+		
+		<h1>The To-do List</h1>
+
+	<!-- <p><button id = "btnadd">Add New Todo</button></p> -->
+		<p><button id="reset" onclick="resetData()">Reset data</button></p>
+		
+		<div id= "submittodo"></div>
+
+		<div id="background">
+
+			<input id="submitbutton" type="submit" onclick="store()" type="button">
+
+			<div id="frame1">
+				<div id="todos">
+					<div id="td0" class="tododiv" onclick="td0Click(0)"></div>
+					<div id="td1" class="tododiv" onclick="td0Click(1)"></div>
+					<div id="td2" class="tododiv" onclick="td0Click(2)"></div>
+					<div id="td3" class="tododiv" onclick="td0Click(3)"></div>
+					<div id="td4" class="tododiv" onclick="td0Click(4)"></div>
+					<div id="td5" class="tododiv" onclick="td0Click(5)"></div>
+					<div id="td6" class="tododiv" onclick="td0Click(6)"></div>
+					<div id="td7" class="tododiv" onclick="td0Click(7)"></div>
+					<div id="td8" class="tododiv" onclick="td0Click(8)"></div>
+					<div id="td9" class="tododiv" onclick="td0Click(9)"></div>
+				</div>
+				<div id="ids">
+					<div id="id0" class="iddiv"></div>
+					<div id="id1" class="iddiv"></div>
+					<div id="id2" class="iddiv"></div>
+					<div id="id3" class="iddiv"></div>
+					<div id="id4" class="iddiv"></div>
+					<div id="id5" class="iddiv"></div>
+					<div id="id6" class="iddiv"></div>
+					<div id="id7" class="iddiv"></div>
+					<div id="id8" class="iddiv"></div>
+					<div id="id9" class="iddiv"></div>
+				</div>
+				<div id="edts">
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(0)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(1)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(2)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(3)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(4)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(5)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(6)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(7)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(8)"></img>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(9)"></img>
+				</div>
+				<div id="dlts">
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(0)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(1)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(2)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(3)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(4)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(5)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(6)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(7)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(8)"></img>
+					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(9)"></img>
+				</div>
+				<div id="expds">
+					<img src="images/arrow_triangle.png" alt="expand" class="expdiv" onclick="expclick(0)"></img>
+				</div>
+				
+			</div>
+
+			<div id= "cms">
+			<!-- <form> -->
+				Task: 
+					<input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Dev Placeholder Copy"><br><br>
+				Keywords: 
+					<input id="formcontent2" class="field" type="text" value=""><br><br>
+				Notes: 
+					<input id="formcontent3" class="field" type="text" value=""><br><br>
+					Priority: 
+				<select id="priority"> 
+					<option value="high">High</option>
+					<option value="medium">Medium</option>
+					<option value="low">Low</option>
+				</select><br><br>
+			</div>
+
+		</div>
+	</body>
+</html>

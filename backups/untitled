@@ -1,0 +1,18 @@
+if(maxSerialNo === undefined) {
+		maxSerialNo = 0;
+		storeMaxSerialNo();
+	} else {
+		maxSerialNo = localStorage.getItem("maxSerialNo");
+		// console.log(localStorage.getItem("maxSerialNo"));
+	};
+
+	//retrieve data
+var retrieveData = function() {
+	console.log("FUNCTION: retrieveData(); triggered");
+	retrievedObject = localStorage.getItem('formToStore1'); //FLAW is either here or in the storage phase
+	console.log("retrievedObject = " + retrievedObject);
+
+	// var finished = JSON.parse(retrievedObject);
+	// console.log("finished = vv");
+	// console.log(finished);
+};
