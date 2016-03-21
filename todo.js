@@ -54,12 +54,14 @@ var store = function() { //triggers when clicking custom store button
     //Build an object (to be stringified)
     data1 = {
     	name: maxSerialNo,
+    	compState: 0,
+    	show: true,
     	info1: formToStore1.value, 
     	info2: formToStore2.value, 
     	info3: formToStore3.value,
     	Priority: formToStore4.value, 
     	Timestamp: formToStore5,
-    	State: 0,
+    	
     };
 
     //Stringify and store
@@ -87,35 +89,35 @@ var retrieveAllData = function() {
 	// document.getElementById("todolist").innerHTML = null;
 
 		//pulls info from localStorage, then push it to divs in .html page
-	for (s = 0; s < maxSerialNo; s++) { //will this work without defining a variable? surely === should become =
+	for (s = 0; s < maxSerialNo && s < 10; s++) {
 		console.log("______" + "loop" + s + "______");  
 		s1 = s;
 		// t = JSON.stringify(s1);
 
 		// console.log(localStorage.getItem("stringData" + s));
 
-		if (localStorage.getItem("stringData" + s) === undefined || localStorage.getItem("stringData" + s) === null) {
-				
-				// s1--;
+		if (localStorage.getItem("stringData" + s) === undefined || localStorage.getItem("stringData" + s) === null) { //TASK - invert 'if' to have if (localStorage.getItem("stringData" + s)). This is the opposite of ...===null. will be neater.
 				d++;
-				console.log("Data null 1, D = " + d);
-
 		} else {
 				//Retrieve string and parse (make an object again)
 			var parsedData = JSON.parse(localStorage.getItem("stringData" + s));//this should be fed into the main array
-				// console.log(parsedData);
 					//push all objects to mainTodoArray
 				mainTodoArray.push(parsedData);
-				// console.log(mainTodoArray);
-				// console.log(parsedData);
-
 			t = JSON.stringify(s);
 
-			// console.log(t);
-			
-			// console.log(mainTodoArray);
-			// console.log(s);
-			// console.log(s1);
+			if (mainTodoArray[s]["show"] === true) {
+				document.getElementById("id" + t).style.display = "block";
+				document.getElementById("td" + t).style.display = "block";
+				document.getElementById("tck" + t).style.display = "block";
+				document.getElementById("dlt" + t).style.display = "block";
+				// console.log(document.getElementById("td" + t).style.display);
+				console.log("showing");			
+			} else {
+				document.getElementById("id" + t).style.display = "none";
+				document.getElementById("td" + t).style.display = "none";
+				document.getElementById("tck" + t).style.display = "none";
+				document.getElementById("dlt" + t).style.display = "none";
+			}
 
 			if (mainTodoArray[s] == null) {
 				d--;
@@ -126,23 +128,24 @@ var retrieveAllData = function() {
 				document.getElementById("id" + t).innerHTML = mainTodoArray[s]["name"] // NB eventually IDs can just be hidden or changed to a variable
 
 					//shows if item has been tapped as 'done'
-				if (mainTodoArray[t]["State"] === 1) {
+				if (mainTodoArray[t]["compState"] === 1) {
 					document.getElementById("td" + t).style.color = "lightgray";
 					document.getElementById("td" + t).style.setProperty("text-decoration", "line-through");
 					document.getElementById("tck" + t).src="images/checked_checkbox.png";
 					document.getElementById("tck" + t).style.opacity="0.5";
+					document.getElementById("td" + t).contentEditable = false;
 				
-				} else if (mainTodoArray[t]["State"] === null) {	
+				} else if (mainTodoArray[t]["compState"] == null) {	
 					document.getElementById("tck" + t).src = "images/unchecked_checkbox.png";
 					document.getElementById("tck" + t).style.opacity = "0";
 					console.log("null");
 
-
-				} else if (mainTodoArray[t]["State"] === 0) {
+				} else if (mainTodoArray[t]["compState"] === 0) {
 					document.getElementById("td" + t).style.color = "black";
 					document.getElementById("td" + t).style.setProperty("text-decoration", "none");
 					document.getElementById("tck" + t).src="images/unchecked_checkbox.png";
 					document.getElementById("tck" + t).style.opacity="1";
+					document.getElementById("td" + t).contentEditable = true;
 				}
 			}
 		}
@@ -158,10 +161,10 @@ var tdoClick = function(tdo) {
 		console.log("undefined");
 		return;
 	}
-	else if (mainTodoArray[h]["State"] === 0) {
-		mainTodoArray[h]["State"] = 1;
-	} else if (mainTodoArray[h]["State"] === 1) {
-		mainTodoArray[h]["State"] = 0;
+	else if (mainTodoArray[h]["compState"] === 0) {
+		mainTodoArray[h]["compState"] = 1;
+	} else if (mainTodoArray[h]["compState"] === 1) {
+		mainTodoArray[h]["compState"] = 0;
 	} else {
 		console.log("inversion didnae work ________");
 	}
@@ -174,20 +177,16 @@ var tdoClick = function(tdo) {
 
 var dltclick = function(dt) {
 	var j = document.getElementById("id" + dt).innerHTML;
-
+	mainTodoArray[dt]["show"] = false;
+	var k = JSON.stringify(mainTodoArray[dt]);
+	localStorage.setItem("stringData" + dt, k);
 	// mainTodoArray.splice(dt,1);
 	// delete mainTodoArray[dt];
-	
 	// localStorage.removeItem("stringData" + dt) //NB this will only work on the first page of todos once pageswitching is implemented
-	
 	// console.dir(mainTodoArray);
-	console.log("delete clicked");
-
-	// var k = JSON.stringify(mainTodoArray);
 	// localStorage.setItem("stringData" + j, k);
-
 	// location.reload();
-
+	console.log("delete clicked");
 	retrieveAllData();    	
 };
 
@@ -210,6 +209,22 @@ var storeMaxSerialNo = function() {
 	localStorage.setItem('maxSerialNo', maxSerialNo);
 }
 
+var showSav = function(sv) {
+	document.getElementById("sav" + sv).style.display = "block";
+	console.log("savShow" + sv);
+}
+
+var saveEdit = function(sv1) {
+	mainTodoArray[sv1]["info1"] = document.getElementById("td" + sv1).innerHTML;
+	localStorage.setItem("stringData" + sv1, JSON.stringify(mainTodoArray[sv1]));
+	console.log("Edit Saved");
+}
+
+var cancelEdit = function(sv) {
+	document.getElementById("sav" + sv).style.display = "none";
+	//TASK- edited text needs to be changed back to original text (function could also be attached to a 'revert' button)
+	console.log("Edit Cancelled");
+}
 // var jQCheck = function() {
 // 	if (window.jQuery) {
 // 		console.log("__jQuery Yes__");

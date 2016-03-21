@@ -38,8 +38,8 @@
 					<img id="tck9" alt="y/n?" class="tckdiv" onclick="tdoClick(9)"></img>
 				</div>
 				<div id="todos">
-					<div id="td0" class="tododiv" contenteditable="true"></div>
-					<div id="td1" class="tododiv" contenteditable="true"></div>
+					<div id="td0" class="tododiv" onclick="showSav(0)" contenteditable="true"></div>
+					<div id="td1" class="tododiv" onclick="showSav(1)" contenteditable="true"></div>
 					<div id="td2" class="tododiv" contenteditable="true"></div>
 					<div id="td3" class="tododiv" contenteditable="true"></div>
 					<div id="td4" class="tododiv" contenteditable="true"></div>
@@ -61,8 +61,8 @@
 					<div id="id8" class="iddiv"></div>
 					<div id="id9" class="iddiv"></div>
 				</div>
-				<div id="edts">
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(0)"></img>
+				<!-- <div id="edts"> -->
+					<!-- <img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(0)"></img>
 					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(1)"></img>
 					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(2)"></img>
 					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(3)"></img>
@@ -71,24 +71,30 @@
 					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(6)"></img>
 					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(7)"></img>
 					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(8)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(9)"></img>
-				</div>
+					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(9)"></img> -->
+				<!-- </div> -->
 				<div id="dlts">
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(0)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(1)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(2)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(3)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(4)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(5)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(6)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(7)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(8)"></img>
-					<img src="images/delete_red.png" alt="delete" class="dltdiv" onclick="dltclick(9)"></img>
+					<img src="images/delete_black.png" id="dlt0" alt="delete" class="dltdiv" onclick="dltclick(0)"></img>
+					<img src="images/delete_black.png" id="dlt1" alt="delete" class="dltdiv" onclick="dltclick(1)"></img>
+					<img src="images/delete_black.png" id="dlt2" alt="delete" class="dltdiv" onclick="dltclick(2)"></img>
+					<img src="images/delete_black.png" id="dlt3" alt="delete" class="dltdiv" onclick="dltclick(3)"></img>
+					<img src="images/delete_black.png" id="dlt4" alt="delete" class="dltdiv" onclick="dltclick(4)"></img>
+					<img src="images/delete_black.png" id="dlt5" alt="delete" class="dltdiv" onclick="dltclick(5)"></img>
+					<img src="images/delete_black.png" id="dlt6" alt="delete" class="dltdiv" onclick="dltclick(6)"></img>
+					<img src="images/delete_black.png" id="dlt7" alt="delete" class="dltdiv" onclick="dltclick(7)"></img>
+					<img src="images/delete_black.png" id="dlt8" alt="delete" class="dltdiv" onclick="dltclick(8)"></img>
+					<img src="images/delete_black.png" id="dlt9" alt="delete" class="dltdiv" onclick="dltclick(9)"></img>
 				</div>
-				<div id="expds">
-					<img src="images/arrow_triangle.png" alt="expand" class="expdiv" onclick="expclick(0)"></img>
+				<div id="savs">
+					<div id="sav0" class="sav">
+						<img src="images/tick-icon.png" id="savBtn0" class="savBtn" onclick="saveEdit(0)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn0" class="xsavBtn" onclick="cancelEdit(0)"></img>
+					</div>
+					<div id="sav1" class="sav">
+						<img src="images/tick-icon.png" id="savBtn1" class="savBtn"></img>
+						<img src="images/cross-icon.png" id="xsavBtn1" class="xsavBtn"></img>
+					</div>
 				</div>
-				
 			</div>
 
 			<div id= "cms">

@@ -43,6 +43,7 @@
 	margin-top: 16px;
 	z-index: 100;
 	background-color: white;
+	display: none;
 }
 
 .iddiv {
@@ -56,6 +57,7 @@
 	background-color: white;
 	top: 1px;
 	border-left: 1px solid;
+	display: none;
 }
 
 #todos {
@@ -100,6 +102,7 @@
 	height: 34px;
 	margin: 0px 0px 16px 0px;
 	border-left: 1px solid;
+	display: none;
 }
 
 .expdiv {
@@ -121,6 +124,7 @@
 	/*margin-left: 4px;*/
 	/*margin-right: 4px;*/
 	/*background-color: yellow;*/
+	display: none;
 }
 
 #submitbutton {
@@ -172,4 +176,24 @@ h1 {
 	position: absolute;
 	background-color: gray;
 	color: pink;
+}
+
+.sav {
+	width: 42px;
+	/*height: 50px;*/
+	display: none;
+}
+
+.savBtn {
+	width: 20px;
+	float: left;
+}
+
+.xsavBtn {
+	width: 20px;
+	float: right;
+}
+
+#savs {
+	/*display: none;*/
 }
