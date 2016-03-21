@@ -17,6 +17,7 @@ var data2 = {}
 var todo1 = "";
 var t;
 var h = 0;
+var hotSeat;
 
 
 var start = function() {
@@ -211,20 +212,36 @@ var storeMaxSerialNo = function() {
 
 var showSav = function(sv) {
 	document.getElementById("sav" + sv).style.display = "block";
+	document.getElementById("savs").style.display = "block";
+	// document.getElementById("dlt" + sv).style.display = "none";
+	document.getElementById("mask1").style.display = "block";
 	console.log("savShow" + sv);
+	hotseat = sv;
+	console.log("hotseat = " + hotseat)
 }
 
 var saveEdit = function(sv1) {
 	mainTodoArray[sv1]["info1"] = document.getElementById("td" + sv1).innerHTML;
 	localStorage.setItem("stringData" + sv1, JSON.stringify(mainTodoArray[sv1]));
+	document.getElementById("mask1").style.display = "none";
+	document.getElementById("savs").style.display = "none";
 	console.log("Edit Saved");
 }
 
-var cancelEdit = function(sv) {
-	document.getElementById("sav" + sv).style.display = "none";
-	//TASK- edited text needs to be changed back to original text (function could also be attached to a 'revert' button)
+var cancelEdit = function() {
+	console.log(mainTodoArray.length);
+	// for (x=0; x < mainTodoArray.length; x++) {
+	for (x=0; x < 2; x++) { //delete this when html has more than 2 savs
+	document.getElementById("sav" + x).style.display = "none";
+	document.getElementById("td" + x).innerHTML = mainTodoArray[hotseat]["info1"];
+	document.getElementById("mask1").style.display = "none";
+	document.getElementById("savs").style.display = "none";
+		//TASK- edited text needs to be changed back to original text (function could also be attached to a 'revert' button)
+	}
+
 	console.log("Edit Cancelled");
 }
+
 // var jQCheck = function() {
 // 	if (window.jQuery) {
 // 		console.log("__jQuery Yes__");

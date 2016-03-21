@@ -21,7 +21,7 @@
 		<div id= "submittodo"></div>
 
 		<div id="background">
-
+			<div id="mask1" onclick="cancelEdit()"></div>
 			<input id="submitbutton" type="submit" onclick="store()" type="button">
 
 			<div id="frame1">
@@ -73,6 +73,16 @@
 					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(8)"></img>
 					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(9)"></img> -->
 				<!-- </div> -->
+				<div id="savs">
+					<div id="sav0" class="sav">
+						<img src="images/tick-icon.png" id="savBtn0" class="savBtn" onclick="saveEdit(0)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn0" class="savBtn" onclick="cancelEdit(0)"></img>
+					</div>
+					<div id="sav1" class="sav">
+						<img src="images/tick-icon.png" id="savBtn1" class="savBtn"></img>
+						<img src="images/cross-icon.png" id="xsavBtn1" class="savBtn"></img>
+					</div>
+				</div>
 				<div id="dlts">
 					<img src="images/delete_black.png" id="dlt0" alt="delete" class="dltdiv" onclick="dltclick(0)"></img>
 					<img src="images/delete_black.png" id="dlt1" alt="delete" class="dltdiv" onclick="dltclick(1)"></img>
@@ -85,16 +95,9 @@
 					<img src="images/delete_black.png" id="dlt8" alt="delete" class="dltdiv" onclick="dltclick(8)"></img>
 					<img src="images/delete_black.png" id="dlt9" alt="delete" class="dltdiv" onclick="dltclick(9)"></img>
 				</div>
-				<div id="savs">
-					<div id="sav0" class="sav">
-						<img src="images/tick-icon.png" id="savBtn0" class="savBtn" onclick="saveEdit(0)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn0" class="xsavBtn" onclick="cancelEdit(0)"></img>
-					</div>
-					<div id="sav1" class="sav">
-						<img src="images/tick-icon.png" id="savBtn1" class="savBtn"></img>
-						<img src="images/cross-icon.png" id="xsavBtn1" class="xsavBtn"></img>
-					</div>
-				</div>
+
+				
+
 			</div>
 
 			<div id= "cms">

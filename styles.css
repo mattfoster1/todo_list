@@ -13,8 +13,8 @@
 	align-items: center;
 	justify-content: space-around;
 	order: 312;
-	width: 100%;
-	height: 100%;
+	width: 98%;
+	height: 98%;
 	z-index: -1;
 	/*background-color: gray;*/
 }
@@ -32,6 +32,7 @@
 	font-family: lucida sans typewriter;
 	line-height: 180%;
 	background-color: rgb(245,245,245);
+	z-index: 1
 }
 
 .tododiv {
@@ -63,6 +64,7 @@
 #todos {
 	width: 60%;
 	height: 100%;
+	z-index: 1;
 }
 
 #ids {
@@ -179,21 +181,37 @@ h1 {
 }
 
 .sav {
-	width: 42px;
-	/*height: 50px;*/
+	width: 100%;
+	height: 100%;
+	/*margin-top: 10px*/
 	display: none;
 }
 
 .savBtn {
-	width: 20px;
-	float: left;
-}
-
-.xsavBtn {
-	width: 20px;
-	float: right;
+	width: 40%;
+	margin-top: 20px;
 }
 
 #savs {
 	/*display: none;*/
+	/*background-color: green;*/
+	/*left: 200px;*/
+	width: 60px;
+	/*position: relative;*/
 }
+
+#mask1 {
+	width: 100%;
+	height: 100%;
+	background-color: yellow;
+	z-index: -5;
+	opacity: 0.5;
+	display: none;
+	position: fixed;
+}
+
+/*html, body {
+	width: 98%;
+	height: 98%;
+	z-index: -1;
+}*/
