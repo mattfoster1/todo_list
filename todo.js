@@ -113,10 +113,9 @@ var retrieveAllData = function() {
 
 			// console.log(t);
 			
-			console.log(mainTodoArray);
-			console.log(s);
+			// console.log(mainTodoArray);
+			// console.log(s);
 			// console.log(s1);
-
 
 			if (mainTodoArray[s] == null) {
 				d--;
@@ -130,9 +129,20 @@ var retrieveAllData = function() {
 				if (mainTodoArray[t]["State"] === 1) {
 					document.getElementById("td" + t).style.color = "lightgray";
 					document.getElementById("td" + t).style.setProperty("text-decoration", "line-through");
-				} else {
+					document.getElementById("tck" + t).src="images/checked_checkbox.png";
+					document.getElementById("tck" + t).style.opacity="0.5";
+				
+				} else if (mainTodoArray[t]["State"] === null) {	
+					document.getElementById("tck" + t).src = "images/unchecked_checkbox.png";
+					document.getElementById("tck" + t).style.opacity = "0";
+					console.log("null");
+
+
+				} else if (mainTodoArray[t]["State"] === 0) {
 					document.getElementById("td" + t).style.color = "black";
 					document.getElementById("td" + t).style.setProperty("text-decoration", "none");
+					document.getElementById("tck" + t).src="images/unchecked_checkbox.png";
+					document.getElementById("tck" + t).style.opacity="1";
 				}
 			}
 		}
@@ -140,12 +150,15 @@ var retrieveAllData = function() {
 
 };
 
-var td0Click = function(tdo) {
+var tdoClick = function(tdo) {
 	
 	h = document.getElementById("id" + tdo).innerHTML;
-		
 	// console.dir("h = " + h);
-	if (mainTodoArray[h]["State"] === 0) {
+	if (mainTodoArray[h] == undefined) {
+		console.log("undefined");
+		return;
+	}
+	else if (mainTodoArray[h]["State"] === 0) {
 		mainTodoArray[h]["State"] = 1;
 	} else if (mainTodoArray[h]["State"] === 1) {
 		mainTodoArray[h]["State"] = 0;
@@ -164,7 +177,8 @@ var dltclick = function(dt) {
 
 	// mainTodoArray.splice(dt,1);
 	// delete mainTodoArray[dt];
-	localStorage.removeItem("stringData" + dt) //NB this will only work on the first page of todos once pageswitching is implemented
+	
+	// localStorage.removeItem("stringData" + dt) //NB this will only work on the first page of todos once pageswitching is implemented
 	
 	// console.dir(mainTodoArray);
 	console.log("delete clicked");
