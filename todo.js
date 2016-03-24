@@ -111,13 +111,15 @@ var retrieveAllData = function() {
 				document.getElementById("td" + t).style.display = "block";
 				document.getElementById("tck" + t).style.display = "block";
 				document.getElementById("dlt" + t).style.display = "block";
-				// console.log(document.getElementById("td" + t).style.display);
-				console.log("showing");			
+				document.getElementById("sav" + t).style.display = "block";
+				// console.log(document.getElementById("sav" + t).style.display);			
 			} else {
 				document.getElementById("id" + t).style.display = "none";
 				document.getElementById("td" + t).style.display = "none";
 				document.getElementById("tck" + t).style.display = "none";
 				document.getElementById("dlt" + t).style.display = "none";
+				document.getElementById("sav" + t).style.display = "none";
+				// console.log(document.getElementById("sav" + t).style.display);			
 			}
 
 			if (mainTodoArray[s] == null) {
@@ -181,18 +183,11 @@ var dltclick = function(dt) {
 	mainTodoArray[dt]["show"] = false;
 	var k = JSON.stringify(mainTodoArray[dt]);
 	localStorage.setItem("stringData" + dt, k);
-	// mainTodoArray.splice(dt,1);
-	// delete mainTodoArray[dt];
-	// localStorage.removeItem("stringData" + dt) //NB this will only work on the first page of todos once pageswitching is implemented
-	// console.dir(mainTodoArray);
-	// localStorage.setItem("stringData" + j, k);
-	// location.reload();
 	console.log("delete clicked");
 	retrieveAllData();    	
 };
 
 var resetData = function() {
-	// console.log("resetData");
 	maxSerialNo = 0;
 	localStorage.setItem("maxSerialNo", maxSerialNo);
 	localStorage.clear();
@@ -209,37 +204,57 @@ var incrementMaxSerialNo = function() {
 var storeMaxSerialNo = function() {
 	localStorage.setItem('maxSerialNo', maxSerialNo);
 }
-
+	//shows save buttons
 var showSav = function(sv) {
-	document.getElementById("sav" + sv).style.display = "block";
 	document.getElementById("savs").style.display = "block";
-	// document.getElementById("dlt" + sv).style.display = "none";
+	var y =  document.getElementsByClassName("sav");
+	for (z = 0; z < mainTodoArray.length; z++) {
+		y[z].style.display = "block";
+	}
+	for (x=0; x < mainTodoArray.length; x++) {
+		document.getElementById("sav" + x).style.opacity = "0.1";		
+	}
+	document.getElementById("sav" + sv).style.opacity = "1";
+	document.getElementById("sav" + sv).style.display = "block";
+	document.getElementById("savs").style.display = "block"; //can't remember what this does
 	document.getElementById("mask1").style.display = "block";
-	console.log("savShow" + sv);
+	retrieveAllData();
 	hotseat = sv;
-	console.log("hotseat = " + hotseat)
 }
-
+	//save any user edits
 var saveEdit = function(sv1) {
 	mainTodoArray[sv1]["info1"] = document.getElementById("td" + sv1).innerHTML;
 	localStorage.setItem("stringData" + sv1, JSON.stringify(mainTodoArray[sv1]));
 	document.getElementById("mask1").style.display = "none";
+	document.getElementById("sav" + sv1).style.display = "none";
 	document.getElementById("savs").style.display = "none";
 	console.log("Edit Saved");
+	retrieveAllData();
+}
+	//reverts to content before edit. Hides save buttons.
+var cancelEdit = function() {
+	for (x=0; x < mainTodoArray.length; x++) {
+		document.getElementById("sav" + x).style.display = "none";
+		document.getElementById("td" + x).innerHTML = mainTodoArray[hotseat]["info1"];
+		document.getElementById("mask1").style.display = "none";
+			//hides wide div they are in
+		document.getElementById("savs").style.display = "none";
+	}
+	retrieveAllData();
+	console.log("Edit Cancelled");
 }
 
-var cancelEdit = function() {
-	console.log(mainTodoArray.length);
-	// for (x=0; x < mainTodoArray.length; x++) {
-	for (x=0; x < 2; x++) { //delete this when html has more than 2 savs
-	document.getElementById("sav" + x).style.display = "none";
-	document.getElementById("td" + x).innerHTML = mainTodoArray[hotseat]["info1"];
-	document.getElementById("mask1").style.display = "none";
-	document.getElementById("savs").style.display = "none";
-		//TASK- edited text needs to be changed back to original text (function could also be attached to a 'revert' button)
+var keypress = function(e) {
+	console.log(e);
+	if (e.keycode == 13) {
+		console.log("keypress ret")
+		saveEdit();
+	} else if (e.keycode == 27) {
+		console.log("keypress esc");
+		cancelEdit();
 	}
-
-	console.log("Edit Cancelled");
+	console.log("keypress");
+	console.log(e);
 }
 
 // var jQCheck = function() {

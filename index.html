@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html onkeypress="keypress(e)">
 	<head>	
 		<title>To do List 1</title>
 		<style>
@@ -17,7 +17,6 @@
 
 	<!-- <p><button id = "btnadd">Add New Todo</button></p> -->
 		<p><button id="reset" onclick="resetData()">Reset data</button></p>
-		
 		<div id= "submittodo"></div>
 
 		<div id="background">
@@ -40,14 +39,14 @@
 				<div id="todos">
 					<div id="td0" class="tododiv" onclick="showSav(0)" contenteditable="true"></div>
 					<div id="td1" class="tododiv" onclick="showSav(1)" contenteditable="true"></div>
-					<div id="td2" class="tododiv" contenteditable="true"></div>
-					<div id="td3" class="tododiv" contenteditable="true"></div>
-					<div id="td4" class="tododiv" contenteditable="true"></div>
-					<div id="td5" class="tododiv" contenteditable="true"></div>
-					<div id="td6" class="tododiv" contenteditable="true"></div>
-					<div id="td7" class="tododiv" contenteditable="true"></div>
-					<div id="td8" class="tododiv" contenteditable="true"></div>
-					<div id="td9" class="tododiv" contenteditable="true"></div>
+					<div id="td2" class="tododiv" onclick="showSav(2)" contenteditable="true"></div>
+					<div id="td3" class="tododiv" onclick="showSav(3)" contenteditable="true"></div>
+					<div id="td4" class="tododiv" onclick="showSav(4)" contenteditable="true"></div>
+					<div id="td5" class="tododiv" onclick="showSav(5)" contenteditable="true"></div>
+					<div id="td6" class="tododiv" onclick="showSav(6)" contenteditable="true"></div>
+					<div id="td7" class="tododiv" onclick="showSav(7)" contenteditable="true"></div>
+					<div id="td8" class="tododiv" onclick="showSav(8)" contenteditable="true"></div>
+					<div id="td9" class="tododiv" onclick="showSav(9)" contenteditable="true"></div>
 				</div>
 				<div id="ids">
 					<div id="id0" class="iddiv"></div>
@@ -79,8 +78,40 @@
 						<img src="images/cross-icon.png" id="xsavBtn0" class="savBtn" onclick="cancelEdit(0)"></img>
 					</div>
 					<div id="sav1" class="sav">
-						<img src="images/tick-icon.png" id="savBtn1" class="savBtn"></img>
-						<img src="images/cross-icon.png" id="xsavBtn1" class="savBtn"></img>
+						<img src="images/tick-icon.png" id="savBtn1" class="savBtn" onclick="saveEdit(1)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn1" class="savBtn" onclick="cancelEdit(1)"></img>
+					</div>
+					<div id="sav2" class="sav">
+						<img src="images/tick-icon.png" id="savBtn2" class="savBtn" onclick="saveEdit(2)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn2" class="savBtn" onclick="cancelEdit(2)"></img>
+					</div>
+					<div id="sav3" class="sav">
+						<img src="images/tick-icon.png" id="savBtn3" class="savBtn" onclick="saveEdit(3)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn3" class="savBtn" onclick="cancelEdit(3)"></img>
+					</div>
+					<div id="sav4" class="sav">
+						<img src="images/tick-icon.png" id="savBtn4" class="savBtn" onclick="saveEdit(4)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn4" class="savBtn" onclick="cancelEdit(4)"></img>
+					</div>
+					<div id="sav5" class="sav">
+						<img src="images/tick-icon.png" id="savBtn5" class="savBtn" onclick="saveEdit(5)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn5" class="savBtn" onclick="cancelEdit(5)"></img>
+					</div>
+					<div id="sav6" class="sav">
+						<img src="images/tick-icon.png" id="savBtn6" class="savBtn" onclick="saveEdit(6)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn6" class="savBtn" onclick="cancelEdit(6)"></img>
+					</div>
+					<div id="sav7" class="sav">
+						<img src="images/tick-icon.png" id="savBtn7" class="savBtn" onclick="saveEdit(7)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn7" class="savBtn" onclick="cancelEdit(7)"></img>
+					</div>
+					<div id="sav8" class="sav">
+						<img src="images/tick-icon.png" id="savBtn8" class="savBtn" onclick="saveEdit(8)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn8" class="savBtn" onclick="cancelEdit(8)"></img>
+					</div>
+					<div id="sav9" class="sav">
+						<img src="images/tick-icon.png" id="savBtn9" class="savBtn" onclick="saveEdit(9)"></img>
+						<img src="images/cross-icon.png" id="xsavBtn9" class="savBtn" onclick="cancelEdit(9)"></img>
 					</div>
 				</div>
 				<div id="dlts">
