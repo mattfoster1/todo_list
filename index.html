@@ -16,7 +16,20 @@
 		<h1>The To-do List</h1>
 
 	<!-- <p><button id = "btnadd">Add New Todo</button></p> -->
-		<p><button id="reset" onclick="resetData()">Reset data</button></p>
+		<button id="reset" onclick="resetData()">Dev tool: Reset localStorage</button>
+		<div id="summary" onclick="stopInt()">Project Summary</div>
+		<div id="features" onclick="showFeatures()">Intended Features</div>
+		
+		<div id="feat1">
+
+			<div id="featTitle" class="featCont"> Intended Features: </div>
+			<div id="featLs" class="featCont">
+				<ls><ul class="strikethrough">point1</ul><ul>point2</ul><ul>point3</ul></ls>
+			</div>
+			<img id="closeFeat" class="featCont" src="images/cross.png" onclick="hideFeat()"></img>
+			<div id="featBackground"></div>
+		</div>
+		
 		<div id= "submittodo"></div>
 
 		<div id="background">
@@ -126,9 +139,6 @@
 					<img src="images/delete_black.png" id="dlt8" alt="delete" class="dltdiv" onclick="dltclick(8)"></img>
 					<img src="images/delete_black.png" id="dlt9" alt="delete" class="dltdiv" onclick="dltclick(9)"></img>
 				</div>
-
-				
-
 			</div>
 
 			<div id= "cms">

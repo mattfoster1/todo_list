@@ -87,15 +87,11 @@ var retrieveAllData = function() {
 	var d = 0;
 
 		//Clears out last load of data, otherwise it duplicates
-	// document.getElementById("todolist").innerHTML = null;
 
 		//pulls info from localStorage, then push it to divs in .html page
 	for (s = 0; s < maxSerialNo && s < 10; s++) {
 		console.log("______" + "loop" + s + "______");  
 		s1 = s;
-		// t = JSON.stringify(s1);
-
-		// console.log(localStorage.getItem("stringData" + s));
 
 		if (localStorage.getItem("stringData" + s) === undefined || localStorage.getItem("stringData" + s) === null) { //TASK - invert 'if' to have if (localStorage.getItem("stringData" + s)). This is the opposite of ...===null. will be neater.
 				d++;
@@ -255,6 +251,86 @@ var keypress = function(e) {
 	}
 	console.log("keypress");
 	console.log(e);
+}
+
+var n = 0;
+var hh;
+var ww;
+var contScal;
+var featCont = document.getElementsByClassName("featCont");
+
+var id11;
+var showFeatures = function() {
+	interval1 = setInterval(feat, 10);
+	console.log("click");
+	document.getElementById("feat1").style.height = "0px";
+	document.getElementById("feat1").style.width = "0px";
+	document.getElementById("feat1").style.display = "block";
+}
+
+
+
+var feat = function() {
+	hh = document.getElementById("feat1").style.height;
+	ww = document.getElementById("feat1").style.width;
+	ll = document.getElementById("feat1").left;
+	
+
+	if (document.getElementById("feat1").style.height >= "80%" || document.getElementById("feat1").style.width >= "70%") {
+		clearInterval(interval1);
+		
+	} else {
+		document.getElementById("feat1").style.height = parseInt(hh) + 5 + "%";
+		document.getElementById("feat1").style.width = parseInt(ww) + 5 + "%";
+		
+		n++;
+	}
+	if (document.getElementById("feat1").style.height >= "30%" || document.getElementById("feat1").style.width >= "30%") {
+		for (n=0; n < featCont.length; n++) {
+			featCont[n].style.display = "block";
+			// console.log("op = " + featCont[n].style.display);
+		}
+	}
+}
+
+var hideFeat = function() {
+	interval2 = setInterval(hideFeat2, 5);
+	console.log("close clicked");
+	console.log("close___");
+
+}
+
+var hideFeat2 = function() {
+	hh = document.getElementById("feat1").style.height;
+	ww = document.getElementById("feat1").style.width;
+
+
+	if (document.getElementById("feat1").style.height <= "0%" || document.getElementById("feat1").style.width <= "0%") {
+	document.getElementById("feat1").style.display = "none";
+	clearInterval(interval2);
+	// console.log("interval2 cleared");
+		
+	} else {
+		document.getElementById("feat1").style.height = parseInt(hh) - 2 + "%";
+		document.getElementById("feat1").style.width = parseInt(ww) - 2 + "%";
+
+		n++;
+		// console.log("else");
+	}
+		//hides feat content when page gets too small
+	if (document.getElementById("feat1").style.height <= "30%" || document.getElementById("feat1").style.width <= "30%") {
+		for (n=0; n < featCont.length; n++) {
+			featCont[n].style.display = "none";
+			// console.log("op = " + featCont[n].style.display);
+		}
+	}
+
+	
+	
+}
+
+
+var showSummary = function() {
 }
 
 // var jQCheck = function() {
