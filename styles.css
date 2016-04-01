@@ -1,6 +1,10 @@
+div {
+	font-family: helvetica;
+}
+
 ul {
-    list-style-type: circle;
-    list-style-position: outside;
+	list-style-type: circle;
+	list-style-position: outside;
 }
 
 #form1 {
@@ -21,7 +25,6 @@ ul {
 	width: 98%;
 	height: 98%;
 	z-index: -1;
-	/*background-color: gray;*/
 }
 
 #frame1 {
@@ -37,7 +40,8 @@ ul {
 	font-family: lucida sans typewriter;
 	line-height: 180%;
 	background-color: rgb(245,245,245);
-	z-index: 1
+	z-index: 1;
+	box-shadow: 2px 4px 5px #888888;
 }
 
 .tododiv {
@@ -79,12 +83,10 @@ ul {
 
 #edts {
 	margin-top: 14px;
-	/*background-color: blue;*/
 }
 
 #dlts {
 	margin-top: 14px;
-	/*background-color: purple;*/
 }
 
 #expds {
@@ -128,9 +130,6 @@ ul {
 	opacity: 0.1;
 	border: 1px black solid;
 	border-radius: 5px;
-	/*margin-left: 4px;*/
-	/*margin-right: 4px;*/
-	/*background-color: yellow;*/
 	display: none;
 }
 
@@ -147,8 +146,7 @@ ul {
 	background-color: purple;
 	border-radius: 12px;
 	margin-bottom: 10%;
-
-
+	box-shadow: 1px 1px 3px #888888;
 }
 
 #cms {
@@ -189,7 +187,6 @@ h1 {
 .sav {
 	width: 100%;
 	height: 100%;
-	/*margin-top: 10px*/
 	display: none;
 }
 
@@ -200,16 +197,12 @@ h1 {
 
 #savs {
 	display: none;
-	/*background-color: green;*/
-	/*left: 200px;*/
 	width: 60px;
-	/*position: relative;*/
 }
 
 #mask1 {
 	width: 100%;
 	height: 100%;
-	/*background-color: gray;*/
 	opacity: 0.25;
 	z-index: -5;
 	display: none;
@@ -217,23 +210,21 @@ h1 {
 }
 
 #summary {
-position: absolute;
-bottom: 8%;
-border: 2px;
-border-style: solid;
-border-color: black;
-padding: 4px 10px 4px 10px;
+	position: absolute;
+	bottom: 8%;
+	border: 2px;
+	border-style: solid;
+	border-color: black;
+	padding: 4px 10px 4px 10px;
 }
 
 #features {
-
-position: absolute;
-bottom: 12%;
-border: 2px;
-border-style: solid;
-border-color: black;
-padding: 4px 10px 4px 10px;
-
+	position: absolute;
+	bottom: 12%;
+	border: 2px;
+	border-style: solid;
+	border-color: black;
+	padding: 4px 10px 4px 10px;
 }
 
 #feat1 {
@@ -242,14 +233,12 @@ padding: 4px 10px 4px 10px;
 	width: 3px;
 	bottom: 5%;
 	left: 5%;
-	/*background-color: white;*/
-	/*opacity: 0.8;*/
-	border: 2px;
+	border: 3px;
 	border-style: solid;
 	border-color: black;
 	display: none;
 	z-index: 1;
-
+	box-shadow: 2px 4px 5px #888888;
 }
 
 #closeFeat {
@@ -274,12 +263,17 @@ padding: 4px 10px 4px 10px;
 	left: 5%;
 	margin: 10px 10px 10px 20px;
 	font-family: helvetica;
+	font-size: 15px;
 	padding-bottom: 30px;
-
+	padding-right: 10px;
+	padding-top: 10px;
+	list-style-type: circle;
+	list-style-position: inside;
+	display: list-item;
 }
 
 #featTitle {
-	margin: 10px 10px 10px 20px;
+	margin: 20px 10px 10px 20px;
 	font-size: 32px;
 	font-family: helvetica;
 }
@@ -288,20 +282,12 @@ padding: 4px 10px 4px 10px;
 	width: 100%;
 	height: 100%;
 	background-color: white;
-	opacity: 0.85;
-	/*float: both;*/
+	opacity: 0.89;
 	position: absolute;
 	top: 0px;
 	z-index: -1;
-	/*clear: both;*/
 }
 
 .featCont {
 	opacity: 1;
 }
-
-/*html, body {
-	width: 98%;
-	height: 98%;
-	z-index: -1;
-}*/
