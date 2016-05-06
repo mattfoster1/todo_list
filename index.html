@@ -1,5 +1,6 @@
 <!doctype html>
-<html onkeypress="keypress(e)">
+<!-- <html onkeypress="keypress(e)"> -->
+<html>
 	<head>	
 		<title>To do List 1</title>
 		<style>
@@ -9,7 +10,7 @@
 		<script src="todo.js"></script>
 		<link rel="stylesheet" href="styles.css">
 	</head>
-	<body>
+	<!-- <body> -->
 
 
 	<body onload="start()">
@@ -143,11 +144,11 @@
 			<!-- <form> -->
 				Task: 
 					<!-- <input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Dev Placeholder Copy"><br><br> -->
-					<input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Enter text here" onfocus="if(this.value == 'Enter text here') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Enter text here';}"><br><br>
+					<input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Enter text here" onfocus="if(this.value == 'Enter text here') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Enter text here';}">
 				Keywords: 
-					<input id="formcontent2" class="field" type="text" value=""><br><br>
+					<input id="formcontent2" class="field" type="text" value="">
 				Notes: 
-					<input id="formcontent3" class="field" type="text" value=""><br><br>
+					<input id="formcontent3" class="field" type="text" value="">
 					Priority: 
 				<select id="priority"> 
 					<option value="high">High</option>
