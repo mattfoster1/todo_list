@@ -11,8 +11,9 @@
 	</head>
 	<body>
 
+
 	<body onload="start()">
-		
+
 		<h1>The To-do List</h1>
 
 	<!-- <p><button id = "btnadd">Add New Todo</button></p> -->
@@ -25,12 +26,14 @@
 			<div id="featTitle" class="featCont"> Intended Features: </div>
 			<div id="featLs" class="featCont">
 				<ul>
-					<li class="strikethrough">Ability to delete Todos</li><br>
-					<li class="strikethrough">Ability to edit Todos</li><br>
-					<li class="strikethrough">Ability to 'tick-off' completed Todos</li><br>
-					<li>'New Todo' system to be changed to overlays, or a small '+' symbol at the bottom of the Todo 'panel'</li><br>
-					<li>Ability to sort Todos by timestamp</li><br>
-					<li>Ability to sort Todos by Priority (followed by Timestamp)</li><br>
+					<li class="strikethrough">Ability to delete Todos.</li><br>
+					<li class="strikethrough">Ability to edit Todos.</li><br>
+					<li class="strikethrough">Ability to 'tick-off' completed Todos.</li><br>
+					<li>'New Todo' system to be changed to overlays, or a small '+' symbol at the bottom of the Todo 'panel'.</li><br>
+					<li>Ability to sort Todos by timestamp.</li><br>
+					<li>Ability to sort Todos by Priority (followed by Timestamp).</li><br>
+					<li>Have multiple pages of todos available. Currently just overflows.</li><br>
+					<li>Add functionality to the Keywords and Notes data fields (currently stores data, but does not display).</li><br>
 				</ul>
 			</div>
 			<img id="closeFeat" class="featCont" src="images/cross.png" onclick="hideFeat()"></img>
@@ -80,18 +83,6 @@
 					<div id="id8" class="iddiv"></div>
 					<div id="id9" class="iddiv"></div>
 				</div>
-				<!-- <div id="edts"> -->
-					<!-- <img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(0)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(1)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(2)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(3)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(4)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(5)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(6)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(7)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(8)"></img>
-					<img src="images/edit.png" alt="edit" class="edtdiv" onclick="edtClick(9)"></img> -->
-				<!-- </div> -->
 				<div id="savs">
 					<div id="sav0" class="sav">
 						<img src="images/tick-icon.png" id="savBtn0" class="savBtn" onclick="saveEdit(0)"></img>
@@ -151,7 +142,8 @@
 			<div id= "cms">
 			<!-- <form> -->
 				Task: 
-					<input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Dev Placeholder Copy"><br><br>
+					<!-- <input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Dev Placeholder Copy"><br><br> -->
+					<input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Enter text here" onfocus="if(this.value == 'Enter text here') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Enter text here';}"><br><br>
 				Keywords: 
 					<input id="formcontent2" class="field" type="text" value=""><br><br>
 				Notes: 

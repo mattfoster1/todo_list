@@ -1,5 +1,19 @@
+/*color: rgb(142,162,133);*/
+/*background-color: rgb(18,15,24);*/
+
+body, html {
+	/*overflow: hidden;*/
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
 div {
 	font-family: helvetica;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
 ul {
@@ -7,13 +21,10 @@ ul {
 	list-style-position: outside;
 }
 
-#form1 {
-	position: absolute;
-	width: 300px;
-	height: 300px;
-	overflow: auto;
-
-}
+@font-face {font-family: SourceSansPro-Semibold; src: url('fonts/SourceSansPro-Semibold.otf');}
+@font-face {font-family: SourceSansPro-Light; src: url('fonts/SourceSansPro-Light.otf');}
+@font-face {font-family: SSP-B; src: url('fonts/SourceSansPro-Bold.otf');}
+@font-face {font-family: SSP-r; src: url('fonts/SourceSansPro-Regular.otf');}
 
 #background {
 	position: absolute;
@@ -28,12 +39,16 @@ ul {
 }
 
 #frame1 {
-	display: -webkit-flex;
-    display: flex;
+/*	display: -webkit-flex;
+    display: flex;*/
+
+	flex-direction: row;
+	justify-content: space-around;
 	order: 3;
+
 	width: 400px;
 	height: 510px;
-	justify-content: space-around;
+
 	border-style: solid;
 	border-color: black;
 	border-width: 100%;
@@ -74,11 +89,13 @@ ul {
 	width: 60%;
 	height: 100%;
 	z-index: 1;
+	flex-direction: column;
 }
 
 #ids {
 	width: 10%;
 	height: 100%;
+	flex-direction: column;
 }
 
 #edts {
@@ -87,6 +104,7 @@ ul {
 
 #dlts {
 	margin-top: 14px;
+	flex-direction: column;
 }
 
 #expds {
@@ -94,20 +112,17 @@ ul {
 }
 
 #ticks {
-	margin-top: 14px;
+	margin-top: 10px;
+	flex-direction: column;
 }
 
 .edtdiv {
-	display: -webkit-flex;
-    display: flex;
 	height: 34px;
 	margin: 0px 0px 16px 0px;
 	border-left: 1px solid;
 }
 
 .dltdiv {
-	display: -webkit-flex;
-    display: flex;
 	height: 34px;
 	margin: 0px 0px 16px 0px;
 	border-left: 1px solid;
@@ -115,18 +130,15 @@ ul {
 }
 
 .expdiv {
-	display: -webkit-flex;
-    display: flex;
 	height: 34px;
 	margin: 0px 0px 16px 0px;
 	border-left: 1px solid;
 }
 
 .tckdiv {
-	display: -webkit-flex;
-    display: flex;
-	height: 20px;
-	margin: 6px 4px 29px 4px;
+	height: 30px;
+	width: 30px;
+	margin: 6px 4px 12.5px 4px;
 	opacity: 0.1;
 	border: 1px black solid;
 	border-radius: 5px;
@@ -134,8 +146,6 @@ ul {
 }
 
 #submitbutton {
-	display: -webkit-flex;
-    display: flex;
 	justify-content: center; 
 	width: 130px;
 	height: 60px;
@@ -145,16 +155,15 @@ ul {
 	color: white;
 	background-color: purple;
 	border-radius: 12px;
-	margin-bottom: 10%;
+	margin: 50px;
 	box-shadow: 1px 1px 3px #888888;
 }
 
 #cms {
 	font-family: lucida grande;
 	text-align: left;
-	padding-right: 10px;
-	padding-left: 10px;
-	margin-bottom: 10%;
+	flex-direction: column;
+	/*background-color: green;*/
 }
 
 .field {
@@ -180,8 +189,9 @@ ul {
 
 h1 {
 	position: absolute;
-	background-color: gray;
-	color: pink;
+	/*background-color: gray;*/
+	color: black;
+	font-family: arial;
 }
 
 .sav {
@@ -290,4 +300,71 @@ h1 {
 
 .featCont {
 	opacity: 1;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 801px) and (min-height: 1000px) and (orientation: portrait) {
+	body, html {
+		height: auto !important;
+		/*overflow: auto;*/
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	#background {
+		flex-direction: column;
+		height: auto;
+	}
+	#frame1 {
+		/*position: absolute;*/
+		height: 1012px;
+		width: 95%;
+		order: 0;
+		font-size: 40px;
+		top: 73px;
+		left: 0px;
+		margin-top: 84px;
+	}
+
+	#cms {
+		/*position: absolute;*/
+		/*bottom: 5%;*/
+		height: 500px;
+		width: 80%;
+		margin: 50px 10px;
+	}
+
+	.field {
+		font-size: 50px;
+	}
+
+	#submitbutton {
+		/*position: absolute;*/
+		/*bottom: 5%;*/
+		width: 50%;
+		height: 300px;
+		margin: 0px 0px 50px 0px;
+	}
+
+	.tododiv {
+		height: 80px;
+		vertical-align: center;
+	}
+
+	.tckdiv, .iddiv, .dltdiv {
+		height: 80px;
+		width: 80px;
+	}
+
+	#summary, #features, #reset {
+		display: none;
+	}
+
+	#formcontent2 {
+		/*display: none !important;*/
+	}
+
+	#formcontent3 {
+		/*display: none !important;*/
+	}
+
 }

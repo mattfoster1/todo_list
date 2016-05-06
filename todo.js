@@ -261,7 +261,7 @@ var featCont = document.getElementsByClassName("featCont");
 
 var id11;
 var showFeatures = function() {
-	interval1 = setInterval(feat, 10);
+	interval1 = setInterval(feat, 20);
 	console.log("click");
 	document.getElementById("feat1").style.height = "0px";
 	document.getElementById("feat1").style.width = "0px";
