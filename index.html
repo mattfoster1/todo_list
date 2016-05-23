@@ -15,7 +15,7 @@
 
 	<body onload="start()">
 
-		<h1>The To-do List</h1>
+		
 
 	<!-- <p><button id = "btnadd">Add New Todo</button></p> -->
 		<button id="reset" onclick="resetData()">Dev tool: Reset localStorage</button>
@@ -44,6 +44,7 @@
 		<div id= "submittodo"></div>
 
 		<div id="background">
+			<h1>The To-do List</h1>
 			<div id="mask1" onclick="cancelEdit()"></div>
 			<input id="submitbutton" type="submit" onclick="store()" type="button">
 
@@ -145,7 +146,7 @@
 				Task: 
 					<!-- <input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Dev Placeholder Copy"><br><br> -->
 					<input id="formcontent1" class="field" style=" padding: 10px 10px 40px 10px;" type="text" value="Enter text here" onfocus="if(this.value == 'Enter text here') {this.value = '';}" onblur="if(this.value == '') {this.value = 'Enter text here';}">
-				Keywords: 
+				<!-- Keywords: 
 					<input id="formcontent2" class="field" type="text" value="">
 				Notes: 
 					<input id="formcontent3" class="field" type="text" value="">
@@ -154,7 +155,7 @@
 					<option value="high">High</option>
 					<option value="medium">Medium</option>
 					<option value="low">Low</option>
-				</select><br><br>
+				</select><br><br> -->
 			</div>
 
 		</div>

@@ -5,10 +5,11 @@ body, html {
 	/*overflow: hidden;*/
 	overflow-y: scroll;
 	overflow-x: hidden;
+	background-color: darkmagenta;
 }
 
 div, input, button {
-	font-family: SSP-r;
+	font-family: rale-r;
 	display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -28,16 +29,30 @@ ul {
 @font-face {font-family: SSP-B; src: url('fonts/SourceSansPro-Bold.otf');}
 @font-face {font-family: SSP-r; src: url('fonts/SourceSansPro-Regular.otf');}
 
+@font-face {font-family: champ-b; src: url('fonts/fonts/champagne/champagne_limousinesbold.ttf');}
+@font-face {font-family: champ-bi; src: url('fonts/fonts/champagne/champagne_limousinesbolditalic.ttf');}
+@font-face {font-family: champ-r; src: url('fonts/fonts/champagne/champagnelimousines.ttf');}
+@font-face {font-family: robo-b; src: url('fonts/fonts/roboto/robotocondensed-bold.ttf');}
+@font-face {font-family: bebas; src: url('fonts/fonts/bebasneue.otf');}
+@font-face {font-family: monty; src: url('fonts/fonts/montserrat/montserrat-regular.ttf');}
+@font-face {font-family: rale-r; src: url('fonts/fonts/raleway/raleway-regular.ttf');}
+
+@font-face {font-family: gunny; src: url('fonts/fonts/gunny/gnyrwn971.ttf');}
+@font-face {font-family: whatever; src: url('fonts/fonts/whatever/whatever_it_takes.ttf');}
+@font-face {font-family: whatever-b; src: url('fonts/fonts/whatever/whatever_it_takes_bold.ttf');}
+
 #background {
 	position: absolute;
 	display: -webkit-flex;
     display: flex;
+    flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 	order: 312;
 	width: 98%;
 	height: 98%;
 	z-index: -1;
+	background-color: darkmagenta;
 }
 
 #frame1 {
@@ -48,31 +63,41 @@ ul {
 	justify-content: space-around;
 	order: 3;
 
-	width: 400px;
+	width: 60%;
+	/*min-width: 585px;*/
 	height: 510px;
 
 	border-style: solid;
 	border-color: black;
-	border-width: 100%;
-	font-family: lucida sans typewriter;
+	border-width: 0.5px;
+	font-family: champ-r;
 	line-height: 180%;
-	background-color: rgb(245,245,245);
+	/*background-color: rgb(245,245,245);*/
+	background-color: rgb(158,38,158);
 	z-index: 1;
-	box-shadow: 2px 4px 5px #888888;
+	box-shadow: 2px 4px 5px darkmagenta;
+
+	border-radius: 4px;
 }
 
 .tododiv {
 	height: 34px;
 	width: 100%;
 	border-bottom: 1px solid;
-	border-color: rgb(221,160,221);
+	/*border-color: rgb(221,160,221);*/
+	border-color: black;
 	margin-left: 1%;
 	margin-top: 16px;
 	z-index: 100;
-	background-color: white;
+	/*background-color: white;*/
 	display: none;
 	white-space: nowrap;
 	z-index: -1;
+
+	color: white !important;
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-family: whatever-b;
 }
 
 .iddiv {
@@ -86,11 +111,11 @@ ul {
 	background-color: white;
 	top: 1px;
 	border-left: 1px solid;
-	display: none;
+	display: none !important;
 }
 
 #todos {
-	width: 60%;
+	width: 75%;
 	height: 100%;
 	z-index: 1;
 	flex-direction: column;
@@ -100,6 +125,7 @@ ul {
 	width: 10%;
 	height: 100%;
 	flex-direction: column;
+	display: none;
 }
 
 #edts {
@@ -154,13 +180,14 @@ ul {
 	width: 130px;
 	height: 60px;
 	order: 2;
-	/*font-family: monaco;*/
+	font-family: monty;
+	border-color: purple;
 	font-size: 18pt;
 	color: white;
 	background-color: purple;
 	border-radius: 12px;
 	margin: 50px;
-	box-shadow: 1px 1px 3px #888888;
+	box-shadow: 1px 1px 3px purple;
 }
 
 #cms {
@@ -168,19 +195,29 @@ ul {
 	text-align: left;
 	flex-direction: column;
 	justify-content: space-around;
-	width: 30%;
+	width: 420px;
 	/*background-color: green;*/
 }
 
 .field {
-	padding-right: 10px;
-	padding-left: 10px;
+	padding: 0 0 0 10px !important;
 	margin-bottom: 10px;
 	border-radius: 4px;
 	border-color: black;
+	border-width: 0.5px;
+	background-color: rgb(158,38,158);
 	overflow: hidden;
-	width: 100%;
-	color: #909090;
+	width: auto;
+
+	white-space: normal;
+	text-overflow: none;
+	/*color: #909090;*/
+	color: white;
+}
+
+#formcontent1 {
+	height: 50px;
+	width: 400px;
 }
 
 .priority {
@@ -196,10 +233,15 @@ ul {
 }
 
 h1 {
-	position: absolute;
+	/*position: absolute;*/
 	/*background-color: gray;*/
 	color: black;
-	font-family: arial;
+	font-family: bebas;
+	font-size: 60px;
+	letter-spacing: 8px;
+	word-spacing: 12px;
+	/*padding: 30px;*/
+	margin: 40px;
 }
 
 .sav {
@@ -234,11 +276,13 @@ h1 {
 	border-style: solid;
 	border-color: black;
 	padding: 4px 10px 4px 10px;
+	display: none;
 }
 
 #features {
 	position: absolute;
-	bottom: 12%;
+	/*bottom: 12%;*/
+	bottom: 8%;
 	border: 2px;
 	border-style: solid;
 	border-color: black;
