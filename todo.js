@@ -58,9 +58,9 @@ var store = function() { //triggers when clicking custom store button
     	compState: 0,
     	show: true,
     	info1: formToStore1.value, 
-    	info2: formToStore2.value, 
-    	info3: formToStore3.value,
-    	Priority: formToStore4.value, 
+    	// info2: formToStore2.value, 
+    	// info3: formToStore3.value,
+    	// Priority: formToStore4.value, 
     	Timestamp: formToStore5,
     	
     };

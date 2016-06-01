@@ -6,6 +6,9 @@ body, html {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	background-color: darkmagenta;
+	/*text-rendering: optimizeLegibility !important;*/
+	/*-webkit-font-smoothing: antialiased !important;*/
+
 }
 
 div, input, button {
@@ -71,9 +74,10 @@ ul {
 	border-color: black;
 	border-width: 0.5px;
 	font-family: champ-r;
-	line-height: 180%;
+	/*line-height: 180%;*/
 	/*background-color: rgb(245,245,245);*/
-	background-color: rgb(158,38,158);
+	/*background-color: rgb(158,38,158);*/
+	background-color: rgb(194,43,194);
 	z-index: 1;
 	box-shadow: 2px 4px 5px darkmagenta;
 
@@ -81,21 +85,22 @@ ul {
 }
 
 .tododiv {
-	height: 34px;
+	height: 50px;
 	width: 100%;
 	border-bottom: 1px solid;
-	/*border-color: rgb(221,160,221);*/
-	border-color: black;
+	border-color: darkmagenta;
 	margin-left: 1%;
-	margin-top: 16px;
+	/*margin-top: 5px;*/
+	line-height: 50px;
 	z-index: 100;
-	/*background-color: white;*/
 	display: none;
 	white-space: nowrap;
+	text-overflow: ellipsis;
 	z-index: -1;
 
 	color: white !important;
-	font-size: 20px;
+	font-size: 45px;
+	vertical-align: text-bottom;
 	letter-spacing: 1px;
 	font-family: whatever-b;
 }
@@ -177,17 +182,22 @@ ul {
 
 #submitbutton {
 	justify-content: center; 
-	width: 130px;
-	height: 60px;
+	min-width: 130px;
+	width: 40%;
+	height: 70px;
+	line-height: 70px;
 	order: 2;
-	font-family: monty;
+	/*font-family: monty;*/
+	font-family: bebas;
+	letter-spacing: 8px;
 	border-color: purple;
-	font-size: 18pt;
+	font-size: 50px;
 	color: white;
 	background-color: purple;
 	border-radius: 12px;
 	margin: 50px;
 	box-shadow: 1px 1px 3px purple;
+	text-shadow: 3px 3px 2px rgb(98,3,98);
 }
 
 #cms {
@@ -195,29 +205,39 @@ ul {
 	text-align: left;
 	flex-direction: column;
 	justify-content: space-around;
-	width: 420px;
-	/*background-color: green;*/
+	width: 60%;
+	order: 1;
+	/*background-color: rgb(158,38,158);*/
+	background-color: rgb(194,43,194);
+	box-shadow: 1px 2px rgb(118,3,118);
+
+	border-radius: 35px;
 }
 
 .field {
 	padding: 0 0 0 10px !important;
-	margin-bottom: 10px;
-	border-radius: 4px;
-	border-color: black;
-	border-width: 0.5px;
-	background-color: rgb(158,38,158);
+	/*margin-bottom: 10px;*/
 	overflow: hidden;
 	width: auto;
+	border-width: 0px;
+	background: none;
 
 	white-space: normal;
 	text-overflow: none;
-	/*color: #909090;*/
+
 	color: white;
+}
+
+.title {
+	font-size: 30px;
+	font-family: monty;
 }
 
 #formcontent1 {
 	height: 50px;
-	width: 400px;
+	width: 99%;
+	font-size: 30px;
+	margin-left: 3%;
 }
 
 .priority {
@@ -233,15 +253,14 @@ ul {
 }
 
 h1 {
-	/*position: absolute;*/
-	/*background-color: gray;*/
-	color: black;
+	order: 0;
+	color: white;
 	font-family: bebas;
-	font-size: 60px;
+	font-size: 90px;
 	letter-spacing: 8px;
 	word-spacing: 12px;
-	/*padding: 30px;*/
 	margin: 40px;
+	text-shadow: 5px 5px 2px rgb(118,3,118);
 }
 
 .sav {
@@ -362,6 +381,11 @@ h1 {
 		overflow-x: hidden;
 	}
 
+	h1 {
+		font-size: 120px;
+		text-shadow: 10px 10px 5px rgb(118,3,118);
+	}
+
 	#background {
 		flex-direction: column;
 		height: auto;
@@ -370,30 +394,33 @@ h1 {
 		/*position: absolute;*/
 		height: 1012px;
 		width: 95%;
-		order: 0;
+		order: 2;
 		font-size: 40px;
 		top: 73px;
 		left: 0px;
 		margin-top: 84px;
+		margin-bottom: 40px;
 	}
 
 	#cms {
-		/*position: absolute;*/
-		/*bottom: 5%;*/
-		height: 800px;
-		width: 80%;
+		width: 95%;
 		margin: 50px 10px;
+		box-shadow: 3px 5px rgb(118,3,118);
+		
+		align-items: center;
+	}
+
+	.field {	
+	}
+
+	.title {
 		font-size: 30px;
 	}
 
-	.field {
+	#formcontent1 {
 		font-size: 50px;
-		border-radius: 8px;
-		border-width: 4px;
-		border-color: black;
-		margin-bottom: 19px;
-		margin-top: -10px;
-		width: 100%;
+		width: 80%;
+		height: 100px;
 	}
 
 	#priority {
@@ -405,18 +432,27 @@ h1 {
 		font-size: 20px;
 	}
 
+	#savs {
+		min-width: 92px;
+	}
+
 	#submitbutton {
-		/*position: absolute;*/
-		/*bottom: 5%;*/
-		width: 50%;
-		height: 300px;
+		width: 80%;
+		height: 200px;
+		line-height: 200px;
 		margin: 0px 0px 50px 0px;
-		font-size: 90px;
+		font-size: 120px;
+		letter-spacing: 11px;
+		text-shadow: 8px 8px 5px rgb(98,3,98);
+		border-radius: 20px;
 	}
 
 	.tododiv {
-		height: 80px;
-		width: 400px;
+		height: 100.5px;
+		line-height: 100.5px;
+		font-size: 40px;
+		width: 90%;
+		white-space: normal;
 		vertical-align: center;
 	}
 
