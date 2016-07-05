@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <!-- <html onkeypress="keypress(e)"> -->
-<html>
-	<head>	
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"> 
 		<title>To do List 1</title>
 		<style>
 			ul { list-style: none;}
@@ -27,17 +28,17 @@
 			<div id="featTitle" class="featCont"> Intended Features: </div>
 			<div id="featLs" class="featCont">
 				<ul>
-					<li class="strikethrough">Ability to delete Todos.</li><br>
-					<li class="strikethrough">Ability to edit Todos.</li><br>
-					<li class="strikethrough">Ability to 'tick-off' completed Todos.</li><br>
-					<li>'New Todo' system to be changed to overlays, or a small '+' symbol at the bottom of the Todo 'panel'.</li><br>
-					<li>Ability to sort Todos by timestamp.</li><br>
-					<li>Ability to sort Todos by Priority (followed by Timestamp).</li><br>
-					<li>Have multiple pages of todos available. Currently just overflows.</li><br>
-					<li>Add functionality to the Keywords and Notes data fields (currently stores data, but does not display).</li><br>
+					<li class="strikethrough">Ability to delete Todos.</li>
+					<li class="strikethrough">Ability to edit Todos.</li>
+					<li class="strikethrough">Ability to 'tick-off' completed Todos.</li>
+					<li>'New Todo' system to be changed to overlays, or a small '+' symbol at the bottom of the Todo 'panel'.</li>
+					<li>Ability to sort Todos by timestamp.</li>
+					<li>Ability to sort Todos by Priority (followed by Timestamp).</li>
+					<li>Have multiple pages of todos available. Currently just overflows.</li>
+					<li>Add functionality to the Keywords and Notes data fields (currently stores data, but does not display).</li>
 				</ul>
 			</div>
-			<img id="closeFeat" class="featCont" src="images/cross.png" onclick="hideFeat()"></img>
+			<img id="closeFeat" class="featCont" src="images/cross.png" onclick="hideFeat()" alt="X">
 			<div id="featBackground"></div>
 		</div>
 		
@@ -46,20 +47,20 @@
 		<div id="background">
 			<h1>The To-do List</h1>
 			<div id="mask1" onclick="cancelEdit()"></div>
-			<input id="submitbutton" type="submit" value="Add Task to List" onclick="store()" type="button">
+			<input id="submitbutton" type="submit" value="Add Task to List" onclick="store()">
 
 			<div id="frame1">
 				<div id="ticks">
-					<img id="tck0" alt="y/n?" class="tckdiv" onclick="tdoClick(0)"></img>
-					<img id="tck1" alt="y/n?" class="tckdiv" onclick="tdoClick(1)"></img>
-					<img id="tck2" alt="y/n?" class="tckdiv" onclick="tdoClick(2)"></img>
-					<img id="tck3" alt="y/n?" class="tckdiv" onclick="tdoClick(3)"></img>
-					<img id="tck4" alt="y/n?" class="tckdiv" onclick="tdoClick(4)"></img>
-					<img id="tck5" alt="y/n?" class="tckdiv" onclick="tdoClick(5)"></img>
-					<img id="tck6" alt="y/n?" class="tckdiv" onclick="tdoClick(6)"></img>
-					<img id="tck7" alt="y/n?" class="tckdiv" onclick="tdoClick(7)"></img>
-					<img id="tck8" alt="y/n?" class="tckdiv" onclick="tdoClick(8)"></img>
-					<img id="tck9" alt="y/n?" class="tckdiv" onclick="tdoClick(9)"></img>
+					<img id="tck0" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(0)">
+					<img id="tck1" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(1)">
+					<img id="tck2" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(2)">
+					<img id="tck3" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(3)">
+					<img id="tck4" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(4)">
+					<img id="tck5" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(5)">
+					<img id="tck6" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(6)">
+					<img id="tck7" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(7)">
+					<img id="tck8" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(8)">
+					<img id="tck9" alt="y/n?" class="tckdiv" src="images/unchecked_checkbox.png" onclick="tdoClick(9)">
 				</div>
 				<div id="todos">
 					<div id="td0" class="tododiv" onclick="showSav(0)" contenteditable="true"></div>
@@ -87,57 +88,57 @@
 				</div>
 				<div id="savs">
 					<div id="sav0" class="sav">
-						<img src="images/tick-icon.png" id="savBtn0" class="savBtn" onclick="saveEdit(0)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn0" class="savBtn" onclick="cancelEdit(0)"></img>
+						<img src="images/tick-icon.png" id="savBtn0" class="savBtn" onclick="saveEdit(0)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn0" class="savBtn" onclick="cancelEdit(0)" alt="N">
 					</div>
 					<div id="sav1" class="sav">
-						<img src="images/tick-icon.png" id="savBtn1" class="savBtn" onclick="saveEdit(1)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn1" class="savBtn" onclick="cancelEdit(1)"></img>
+						<img src="images/tick-icon.png" id="savBtn1" class="savBtn" onclick="saveEdit(1)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn1" class="savBtn" onclick="cancelEdit(1)" alt="N">
 					</div>
 					<div id="sav2" class="sav">
-						<img src="images/tick-icon.png" id="savBtn2" class="savBtn" onclick="saveEdit(2)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn2" class="savBtn" onclick="cancelEdit(2)"></img>
+						<img src="images/tick-icon.png" id="savBtn2" class="savBtn" onclick="saveEdit(2)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn2" class="savBtn" onclick="cancelEdit(2)" alt="N">
 					</div>
 					<div id="sav3" class="sav">
-						<img src="images/tick-icon.png" id="savBtn3" class="savBtn" onclick="saveEdit(3)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn3" class="savBtn" onclick="cancelEdit(3)"></img>
+						<img src="images/tick-icon.png" id="savBtn3" class="savBtn" onclick="saveEdit(3)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn3" class="savBtn" onclick="cancelEdit(3)" alt="N">
 					</div>
 					<div id="sav4" class="sav">
-						<img src="images/tick-icon.png" id="savBtn4" class="savBtn" onclick="saveEdit(4)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn4" class="savBtn" onclick="cancelEdit(4)"></img>
+						<img src="images/tick-icon.png" id="savBtn4" class="savBtn" onclick="saveEdit(4)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn4" class="savBtn" onclick="cancelEdit(4)" alt="N">
 					</div>
 					<div id="sav5" class="sav">
-						<img src="images/tick-icon.png" id="savBtn5" class="savBtn" onclick="saveEdit(5)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn5" class="savBtn" onclick="cancelEdit(5)"></img>
+						<img src="images/tick-icon.png" id="savBtn5" class="savBtn" onclick="saveEdit(5)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn5" class="savBtn" onclick="cancelEdit(5)" alt="N">
 					</div>
 					<div id="sav6" class="sav">
-						<img src="images/tick-icon.png" id="savBtn6" class="savBtn" onclick="saveEdit(6)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn6" class="savBtn" onclick="cancelEdit(6)"></img>
+						<img src="images/tick-icon.png" id="savBtn6" class="savBtn" onclick="saveEdit(6)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn6" class="savBtn" onclick="cancelEdit(6)" alt="N">
 					</div>
 					<div id="sav7" class="sav">
-						<img src="images/tick-icon.png" id="savBtn7" class="savBtn" onclick="saveEdit(7)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn7" class="savBtn" onclick="cancelEdit(7)"></img>
+						<img src="images/tick-icon.png" id="savBtn7" class="savBtn" onclick="saveEdit(7)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn7" class="savBtn" onclick="cancelEdit(7)" alt="N">
 					</div>
 					<div id="sav8" class="sav">
-						<img src="images/tick-icon.png" id="savBtn8" class="savBtn" onclick="saveEdit(8)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn8" class="savBtn" onclick="cancelEdit(8)"></img>
+						<img src="images/tick-icon.png" id="savBtn8" class="savBtn" onclick="saveEdit(8)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn8" class="savBtn" onclick="cancelEdit(8)" alt="N">
 					</div>
 					<div id="sav9" class="sav">
-						<img src="images/tick-icon.png" id="savBtn9" class="savBtn" onclick="saveEdit(9)"></img>
-						<img src="images/cross-icon.png" id="xsavBtn9" class="savBtn" onclick="cancelEdit(9)"></img>
+						<img src="images/tick-icon.png" id="savBtn9" class="savBtn" onclick="saveEdit(9)" alt="Y">
+						<img src="images/cross-icon.png" id="xsavBtn9" class="savBtn" onclick="cancelEdit(9)" alt="N">
 					</div>
 				</div>
 				<div id="dlts">
-					<img src="images/delete_black.png" id="dlt0" alt="delete" class="dltdiv" onclick="dltclick(0)"></img>
-					<img src="images/delete_black.png" id="dlt1" alt="delete" class="dltdiv" onclick="dltclick(1)"></img>
-					<img src="images/delete_black.png" id="dlt2" alt="delete" class="dltdiv" onclick="dltclick(2)"></img>
-					<img src="images/delete_black.png" id="dlt3" alt="delete" class="dltdiv" onclick="dltclick(3)"></img>
-					<img src="images/delete_black.png" id="dlt4" alt="delete" class="dltdiv" onclick="dltclick(4)"></img>
-					<img src="images/delete_black.png" id="dlt5" alt="delete" class="dltdiv" onclick="dltclick(5)"></img>
-					<img src="images/delete_black.png" id="dlt6" alt="delete" class="dltdiv" onclick="dltclick(6)"></img>
-					<img src="images/delete_black.png" id="dlt7" alt="delete" class="dltdiv" onclick="dltclick(7)"></img>
-					<img src="images/delete_black.png" id="dlt8" alt="delete" class="dltdiv" onclick="dltclick(8)"></img>
-					<img src="images/delete_black.png" id="dlt9" alt="delete" class="dltdiv" onclick="dltclick(9)"></img>
+					<img src="images/delete_black.png" id="dlt0" alt="delete" class="dltdiv" onclick="dltclick(0)">
+					<img src="images/delete_black.png" id="dlt1" alt="delete" class="dltdiv" onclick="dltclick(1)">
+					<img src="images/delete_black.png" id="dlt2" alt="delete" class="dltdiv" onclick="dltclick(2)">
+					<img src="images/delete_black.png" id="dlt3" alt="delete" class="dltdiv" onclick="dltclick(3)">
+					<img src="images/delete_black.png" id="dlt4" alt="delete" class="dltdiv" onclick="dltclick(4)">
+					<img src="images/delete_black.png" id="dlt5" alt="delete" class="dltdiv" onclick="dltclick(5)">
+					<img src="images/delete_black.png" id="dlt6" alt="delete" class="dltdiv" onclick="dltclick(6)">
+					<img src="images/delete_black.png" id="dlt7" alt="delete" class="dltdiv" onclick="dltclick(7)">
+					<img src="images/delete_black.png" id="dlt8" alt="delete" class="dltdiv" onclick="dltclick(8)">
+					<img src="images/delete_black.png" id="dlt9" alt="delete" class="dltdiv" onclick="dltclick(9)">
 				</div>
 			</div>
 
